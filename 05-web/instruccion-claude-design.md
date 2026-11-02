@@ -1,12 +1,27 @@
 Construye el sitio web de **Negocios con Diana**: una landing page de una sola página, responsive, que vende la masterclass de Diana Yela, mentora de mentalidad para mujeres emprendedoras.
 
-## Archivos adjuntos
+## Ubicaciones
+
+- **Insumos UX** (diseños de Stitch, `DESIGN.md` e imágenes):
+  `C:\Users\jheredia\Documents\clientes\NegociosConDiana\05-web\referencias\Insumos_UX`
+  En el repo: `05-web/referencias/Insumos_UX/`
+- **Dónde crear el sitio** (versión web y móvil, en un único sitio responsive):
+  `C:\Users\jheredia\Documents\clientes\NegociosConDiana\05-web\sitio`
+  En el repo: `05-web/sitio/`
+- **Estructura de la carpeta `sitio`:**
+  - `index.html` en la raíz.
+  - `css/`, `js/` e `img/`.
+  - Las imágenes se copian desde Insumos UX a `img/`.
+  - Usar rutas relativas, porque se publica en GitHub Pages.
+  - Reemplazar el `index.html` provisional que existe hoy.
+
+## Archivos de Insumos UX
 
 | Archivo | Uso |
 |---|---|
 | `code.html` + `screen.png` (versión **web**) | **Diseño base.** Respetar su estructura, textos, estilo y componentes |
 | `code.html` + `screen.png` (versión **celular**) | Referencia de cómo se adapta a móvil (orden, apilado, tamaños) |
-| `DESIGN.md` | Sistema de diseño: colores, tipografía, esquinas, sombras y botones. Aplicarlo tal cual |
+| `DESIGN.md` (en la raíz de Insumos_UX) | Sistema de diseño: colores, tipografía, esquinas, sombras y botones. Aplicarlo tal cual |
 | `young_cheerful_smiling_latina_woman…holding_a.png` | Imagen de la **portada** (hero) |
 | `young_latina_woman…working_on_a_modern_laptop….png` | Imagen de **beneficios** / "De Distraída a Imparable" |
 | `happy_young_smiling_latina_woman…sitting_relaxed….png` | Imagen de **qué incluye** ("Aprende donde quieras") |

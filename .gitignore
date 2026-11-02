@@ -13,7 +13,3 @@ desktop.ini
 node_modules/
 dist/
 .env
-
-# Originales del cliente: no se suben mientras el repo sea público
-04-materiales/recibido-del-cliente/*
-!04-materiales/recibido-del-cliente/.gitkeep

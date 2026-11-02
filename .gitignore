@@ -1,0 +1,19 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporales de editores y programas
+*.tmp
+*.bak
+~$*
+.~lock.*
+
+# Dependencias y builds de la web
+node_modules/
+dist/
+.env
+
+# Originales del cliente: no se suben mientras el repo sea público
+04-materiales/recibido-del-cliente/*
+!04-materiales/recibido-del-cliente/.gitkeep

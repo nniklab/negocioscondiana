@@ -168,7 +168,7 @@
             <span class="video__titulo">Masterclass: Los 7 Frenos Mentales • Negocios con Diana</span>
             <span class="icono" aria-hidden="true">hd</span>
           </div>
-          <div class="video__pantalla" id="videoTrigger">
+          <div class="video__pantalla" id="videoTrigger" data-youtube="5GOuc1yS-o4">
             <img class="video__poster" src="img/beneficios-laptop.jpg" alt="" loading="lazy" width="900" height="672">
             <div class="video__velo" aria-hidden="true"></div>
             <div class="video__centro">
@@ -208,8 +208,9 @@
         </p>
       </header>
 
-      <div class="beneficios">
-        <article class="tarjeta beneficio aparecer">
+      <div class="carrusel aparecer" data-carrusel>
+      <div class="beneficios carrusel__pista" tabindex="0" role="group" aria-roledescription="carrusel" aria-label="Lo que vas a lograr">
+        <article class="tarjeta beneficio">
           <span class="beneficio__icono beneficio__icono--coral"><span class="icono relleno">visibility</span></span>
           <div class="beneficio__cuerpo">
             <span class="beneficio__paso paso--coral">PASO 01</span>
@@ -217,7 +218,7 @@
             <p>Identifica los patrones inconscientes de miedo y procrastinación que frenan tus decisiones de negocio.</p>
           </div>
         </article>
-        <article class="tarjeta beneficio aparecer aparecer--d1">
+        <article class="tarjeta beneficio">
           <span class="beneficio__icono beneficio__icono--amarillo"><span class="icono relleno">payments</span></span>
           <div class="beneficio__cuerpo">
             <span class="beneficio__paso paso--navy">PASO 02</span>
@@ -225,7 +226,7 @@
             <p>Sana tu relación con el dinero y abre paso a un estado de plenitud que respalde tu crecimiento profesional.</p>
           </div>
         </article>
-        <article class="tarjeta beneficio aparecer aparecer--d2">
+        <article class="tarjeta beneficio">
           <span class="beneficio__icono beneficio__icono--cyan"><span class="icono relleno">center_focus_strong</span></span>
           <div class="beneficio__cuerpo">
             <span class="beneficio__paso paso--cyan">PASO 03</span>
@@ -233,7 +234,7 @@
             <p>Aprende el método exacto para silenciar el ruido cotidiano y avanzar con prioridades claras y efectivas.</p>
           </div>
         </article>
-        <article class="tarjeta beneficio aparecer aparecer--d3">
+        <article class="tarjeta beneficio">
           <span class="beneficio__icono beneficio__icono--lila"><span class="icono relleno">self_improvement</span></span>
           <div class="beneficio__cuerpo">
             <span class="beneficio__paso paso--lila">PASO 04</span>
@@ -241,10 +242,24 @@
             <p>Construye una seguridad inquebrantable que te permita ofrecer tus servicios con convicción y autoridad.</p>
           </div>
         </article>
+        <article class="tarjeta beneficio-foto solo-movil">
+          <img src="img/beneficios-laptop.jpg" width="900" height="672" loading="lazy" alt="Emprendedora sonriente y enfocada trabajando en su laptop desde casa">
+          <div class="flotante flotante--abajo-centro">
+            <span class="punto-vivo" aria-hidden="true"></span>
+            <strong>Claridad mental = Resultados</strong>
+          </div>
+        </article>
+      </div>
+        <div class="carrusel__controles">
+          <button class="carrusel__btn" type="button" data-carrusel-prev aria-label="Ver anterior"><span class="icono" aria-hidden="true">chevron_left</span></button>
+          <div class="carrusel__puntos" aria-hidden="true"></div>
+          <button class="carrusel__btn" type="button" data-carrusel-next aria-label="Ver siguiente"><span class="icono" aria-hidden="true">chevron_right</span></button>
+          <span class="sr-only" aria-live="polite" data-carrusel-estado></span>
+        </div>
       </div>
 
       <div class="bento">
-        <div class="bento__foto aparecer">
+        <div class="bento__foto solo-escritorio aparecer">
           <div class="blob-foto">
             <div class="blob-foto__marco blob-foto__marco--frio">
               <div class="blob-foto__recorte">
@@ -317,30 +332,31 @@
       </header>
 
       <div class="incluye">
-        <div class="incluye__lista">
+        <div class="carrusel" data-carrusel>
+        <div class="incluye__lista carrusel__pista" tabindex="0" role="group" aria-roledescription="carrusel" aria-label="Lo que incluye la masterclass">
           <ul class="modulos">
-            <li class="tarjeta modulo aparecer">
+            <li class="tarjeta modulo">
               <span class="circulo circulo--verde circulo--40"><span class="icono">check_circle</span></span>
               <div>
                 <h3>Masterclass "Los 7 frenos mentales"</h3>
                 <p>Video en alta definición con acceso de por vida. Aprende a tu propio ritmo desde cualquier dispositivo.</p>
               </div>
             </li>
-            <li class="tarjeta modulo aparecer aparecer--d1">
+            <li class="tarjeta modulo">
               <span class="circulo circulo--cyan circulo--40"><span class="icono">menu_book</span></span>
               <div>
                 <h3>Guía "De Distraída a Imparable"</h3>
                 <p>Enfoque y claridad mental. Plantillas y ejercicios de descarga inmediata para organizar tus semanas con propósito.</p>
               </div>
             </li>
-            <li class="tarjeta modulo aparecer aparecer--d2">
+            <li class="tarjeta modulo">
               <span class="circulo circulo--lila circulo--40"><span class="icono">stars</span></span>
               <div>
                 <h3>Guía "Primero Crees en ti"</h3>
                 <p>Autoconfianza y seguridad. Estrategias comprobadas para reforzar tu postura y comunicar tu propuesta sin timidez.</p>
               </div>
             </li>
-            <li class="tarjeta modulo aparecer aparecer--d3">
+            <li class="tarjeta modulo">
               <span class="circulo circulo--coral circulo--40"><span class="icono">play_circle</span></span>
               <div>
                 <h3>Video "El Juego de la Vida"</h3>
@@ -349,7 +365,7 @@
             </li>
           </ul>
 
-          <div class="tarjeta aprende aparecer">
+          <div class="tarjeta aprende">
             <div class="aprende__foto">
               <picture>
                 <source srcset="img/incluye-aprende.webp" type="image/webp">
@@ -361,6 +377,13 @@
               <span>Accede a las guías en PDF y a todas las lecciones desde tu celular, tablet o laptop las 24/7.</span>
             </div>
           </div>
+        </div>
+        <div class="carrusel__controles">
+          <button class="carrusel__btn" type="button" data-carrusel-prev aria-label="Ver anterior"><span class="icono" aria-hidden="true">chevron_left</span></button>
+          <div class="carrusel__puntos" aria-hidden="true"></div>
+          <button class="carrusel__btn" type="button" data-carrusel-next aria-label="Ver siguiente"><span class="icono" aria-hidden="true">chevron_right</span></button>
+          <span class="sr-only" aria-live="polite" data-carrusel-estado></span>
+        </div>
         </div>
 
         <div class="precio aparecer aparecer--d1" id="precio-oferta">
@@ -390,12 +413,21 @@
       </div>
     </section>
 
-    <!-- SOBRE DIANA -->
+    <!-- SOBRE DIANA + CONTACTO (en celular: carrusel de 2 tarjetas) -->
+    <div class="carrusel carrusel--diana" data-carrusel>
+    <div class="carrusel__pista diana__pista" tabindex="0" role="group" aria-roledescription="carrusel" aria-label="Conoce a Diana y contáctala">
     <section class="contenedor seccion" id="sobre-diana">
       <div class="tarjeta sobre aparecer">
         <span class="sobre__deco sobre__deco--1" aria-hidden="true"></span>
         <span class="sobre__deco sobre__deco--2" aria-hidden="true"></span>
         <div class="sobre__contenido">
+          <div class="sobre__foto solo-movil">
+            <div class="retrato__marco">
+              <div class="retrato__recorte">
+                <img src="img/diana-yela.jpg" width="900" height="900" loading="lazy" alt="Diana Yela, mentora y fundadora de Negocios con Diana">
+              </div>
+            </div>
+          </div>
           <span class="pill pill--navy"><span class="icono coral">person_celebrate</span>CONOCE A TU MENTORA</span>
           <h2 class="titulo-seccion">Sobre Diana</h2>
           <p class="sobre__bio">
@@ -487,6 +519,16 @@
         </div>
       </div>
     </section>
+    </div>
+    <div class="contenedor">
+        <div class="carrusel__controles">
+          <button class="carrusel__btn" type="button" data-carrusel-prev aria-label="Ver anterior"><span class="icono" aria-hidden="true">chevron_left</span></button>
+          <div class="carrusel__puntos" aria-hidden="true"></div>
+          <button class="carrusel__btn" type="button" data-carrusel-next aria-label="Ver siguiente"><span class="icono" aria-hidden="true">chevron_right</span></button>
+          <span class="sr-only" aria-live="polite" data-carrusel-estado></span>
+        </div>
+    </div>
+    </div>
   </main>
 
   <!-- PIE DE PÁGINA -->
@@ -500,7 +542,7 @@
         <div class="pie__redes">
           <a class="pie__red" href="#" aria-label="Instagram"><span class="icono" aria-hidden="true">photo_camera</span></a>
           <a class="pie__red" href="#" aria-label="LinkedIn"><span class="icono" aria-hidden="true">work</span></a>
-          <a class="pie__red" href="#" aria-label="YouTube"><span class="icono" aria-hidden="true">smart_display</span></a>
+          <a class="pie__red" href="https://www.youtube.com/@dianayelamesias" target="_blank" rel="noopener noreferrer" aria-label="YouTube de Diana Yela"><span class="icono" aria-hidden="true">smart_display</span></a>
         </div>
       </div>
       <div class="pie__abajo">

@@ -677,6 +677,8 @@ main {
 .video__pulso { position: absolute; inset: 0; border-radius: 50%; background: var(--coral); opacity: .3; animation: ping 1.6s cubic-bezier(0, 0, .2, 1) infinite; }
 .video__pantalla:hover .video__play { transform: scale(1.1); }
 .video__play.is-presionado { transform: scale(.95); }
+.video__pantalla.is-reproduciendo { cursor: default; background: #000; }
+.video__iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .video__cta { margin-top: var(--s-sm); font-weight: 700; font-size: 15px; line-height: 1.3; }
 .video__desc { margin-top: 2px; font-size: 13px; color: rgba(255, 255, 255, .85); }
 .video__controles {
@@ -1094,4 +1096,172 @@ main {
   .js .aparecer { opacity: 1; transform: none; }
   .js .mapa .mapa__curva { stroke-dashoffset: 0; }
   .pill__punto::after, .video__pulso { display: none; }
+}
+
+/* =========================================================
+   Carruseles (solo celular, < 768 px)
+   Beneficios + foto · Qué incluye + "Aprende donde quieras"
+   · Sobre Diana / Contacto en 2 tarjetas
+   En tablet y escritorio el diseño queda igual.
+   ========================================================= */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.carrusel { min-width: 0; }
+.carrusel__controles { display: none; }
+.solo-movil { display: none !important; }
+
+@media (max-width: 767px) {
+  .solo-movil { display: flex !important; }
+  .solo-escritorio { display: none !important; }
+
+  .carrusel__pista {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch;
+    gap: .75rem;
+    margin: 0 calc(-1 * var(--margen));
+    padding: .5rem var(--margen) 1.75rem;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--margen);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  .carrusel__pista::-webkit-scrollbar { display: none; }
+  .carrusel__pista:focus-visible { outline-offset: -3px; border-radius: var(--r); }
+  .carrusel__pista > *,
+  .carrusel__pista > .modulos > * {
+    flex: 0 0 86%;
+    min-width: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  .carrusel__pista > .modulos { display: contents; }
+
+  .carrusel__controles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--s-md);
+    margin-top: -.5rem;
+  }
+  .carrusel__btn {
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: var(--card);
+    color: var(--navy);
+    box-shadow: var(--sombra-1);
+    cursor: pointer;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .carrusel__btn .icono { font-size: 26px; }
+  .carrusel__btn:active { transform: scale(.94); }
+  .carrusel__btn:disabled { opacity: .35; cursor: default; box-shadow: none; }
+  .carrusel__puntos { display: flex; align-items: center; gap: 6px; }
+  .carrusel__punto {
+    width: 8px; height: 8px;
+    border-radius: var(--r-full);
+    background: rgba(47, 44, 94, .18);
+    transition: width .25s ease, background-color .25s ease;
+  }
+  .carrusel__punto.is-activo { width: 22px; background: var(--coral); }
+
+  /* --- Beneficios: tarjetas verticales de igual altura --- */
+  .beneficios { margin-bottom: var(--s-xl); }
+  .beneficio {
+    flex-direction: column;
+    gap: var(--s-sm);
+    padding: var(--s-lg);
+    border-radius: var(--r-md);
+  }
+  .beneficio:hover { transform: none; }
+  .beneficio__icono { width: 56px; height: 56px; margin-bottom: var(--s-xs); }
+  .beneficio__icono .icono { font-size: 28px; }
+  .beneficio h3 { font-size: 19px; line-height: 26px; }
+  .beneficio p { font-size: 15px; line-height: 22px; }
+
+  .beneficio-foto {
+    position: relative;
+    min-height: 300px;
+    padding: 0;
+    overflow: hidden;
+    border-radius: var(--r-md);
+    background: var(--card);
+  }
+  .beneficio-foto img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 62% 50%;
+  }
+  .beneficio-foto .flotante--abajo-centro { bottom: 1rem; }
+
+  /* --- Qué incluye: módulos + foto en tarjetas de igual altura --- */
+  .incluye__lista { gap: .75rem; }
+  .modulo {
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--s-sm);
+    padding: var(--s-lg);
+    border-radius: var(--r-md);
+  }
+  .modulo:hover { transform: none; }
+  .modulo .circulo { width: 48px; height: 48px; margin: 0 0 var(--s-xs); }
+  .modulo .circulo .icono { font-size: 26px; }
+  .modulo h3 { font-size: 19px; line-height: 26px; }
+  .modulo p { font-size: 15px; line-height: 22px; margin-top: var(--s-xs); }
+  .aprende {
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: var(--r-md);
+  }
+  .aprende__foto { aspect-ratio: 16 / 10; width: 100%; height: auto; }
+
+  /* --- Sobre Diana + Contacto: 2 tarjetas --- */
+  .carrusel--diana { padding-bottom: var(--seccion); }
+  .diana__pista { margin: 0; }
+  .diana__pista > .seccion {
+    flex-basis: 88%;
+    max-width: none;
+    padding: 0;
+  }
+  .diana__pista .tarjeta { height: 100%; }
+  .carrusel--diana .carrusel__controles { margin-top: -.5rem; }
+
+  .sobre { padding: var(--s-lg); }
+  .sobre__contenido { gap: var(--s-xs); }
+  .sobre__foto { justify-content: center; width: 100%; margin-bottom: var(--s-sm); }
+  .sobre__foto .retrato__marco { width: 132px; height: 132px; padding: 5px; }
+  .sobre__foto img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+  .sobre__contenido .titulo-seccion { margin-bottom: var(--s-xs); }
+  .sobre__bio { font-size: 15px; line-height: 1.6; margin-bottom: var(--s-md); }
+  .metrica { padding: .75rem var(--s-xs); }
+  .metrica__numero { font-size: 24px; }
+  .metrica__texto { font-size: 11px; }
+
+  .contacto { padding: var(--s-lg); gap: var(--s-md); align-content: start; }
+  .contacto__foto { display: none; }
+  .contacto__texto { gap: .75rem; }
+  .contacto__cita { font-size: 21px; line-height: 1.3; }
+  .contacto__intro { font-size: 15px; line-height: 22px; }
+  .canal { padding: .6rem var(--s-md); }
+  .contacto__final { padding-top: var(--s-xs); gap: var(--s-sm); }
+
+  /* --- Hero un poco más compacto para entrar en una pantalla --- */
+  .blob-foto { max-width: 240px; }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: reduce) {
+  .carrusel__pista { scroll-behavior: auto; }
 }
